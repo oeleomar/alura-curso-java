@@ -7,10 +7,11 @@ package Curso3;
 //Método Autentica
 
 //Extends é para classes, implements é um contrato.
+//Não é necessário digitar public abstract
 
 public abstract interface Autenticavel {
 
-  public abstract void setSenha(int senha);
+  void setSenha(int senha);
 
-  public abstract boolean autentica(int senha);
+  boolean autentica(int senha);
 }
