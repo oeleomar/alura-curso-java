@@ -1,19 +1,20 @@
 package Curso3;
 
 public class Cliente implements Autenticavel {
-  private int senha;
+  private AutenticavelUtil autenticador;
+
+  public Cliente() {
+    this.autenticador = new AutenticavelUtil();
+  }
 
   @Override
   public void setSenha(int senha) {
-    this.senha = senha;
+    autenticador.setSenha(senha);
   }
 
   @Override
   public boolean autentica(int senha) {
-    if (this.senha == senha)
-      return true;
-
-    return false;
+    return autenticador.autentica(senha);
   }
 
 }
