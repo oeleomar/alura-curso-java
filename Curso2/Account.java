@@ -1,10 +1,13 @@
 
-public class Account {
-  private double balance;
+public abstract class Account {
+  protected double balance;
   private int number;
   private int agency;
   private Cliente titular;
   private static int total;
+
+  public Account() {
+  }
 
   public Account(Cliente titular, int number, int agency) {
     Account.total++;
@@ -13,25 +16,18 @@ public class Account {
     this.agency = agency;
   }
 
-  public void deposit(double value) {
-    this.balance += value;
-  }
+  public abstract void deposit(double value);
 
-  public boolean withdraw(double value) {
+  public void withdraw(double value) {
     if (value > this.balance)
-      return false;
+      throw new SaldoInsuficienteException("Saldo: " + this.balance + ", Valor: " + value + ", Saldo insuficiente.");
 
     this.balance -= value;
-    return true;
   }
 
-  public boolean transfer(Account account, double value) {
-    if (value > this.balance)
-      return false;
-
+  public void transfer(Account account, double value) {
+    this.withdraw(value);
     account.deposit(value);
-    this.balance -= value;
-    return true;
   }
 
   public double getBalance() {
