@@ -2,7 +2,7 @@ package br.com.eleomardorneles.alura.test;
 
 public class MinhaString {
   public static void main(String[] args) {
-    String nome = "Eleomar"; // Object literal
+    String nome = "Eleomar Dorneles"; // Object literal
     String outroNome = new String("Outro Nome");
     // Char é sempre colocado com aspas simples ''
     char a = 'a';
