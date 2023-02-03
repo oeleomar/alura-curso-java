@@ -1,4 +1,4 @@
-package br.com.eleomardorneles.java;
+package br.com.eleomardorneles.java.test;
 
 public class App {
     public static void main(String[] args) {
