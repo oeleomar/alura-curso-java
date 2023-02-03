@@ -96,4 +96,14 @@ public abstract class Conta extends Object {
         return "Numero: " + this.numero + ", Agencia: " + this.agencia;
     }
 
+    @Override
+    public boolean equals(Object c) {
+        Conta outra = (Conta) c;
+        if (this.agencia != outra.agencia)
+            return false;
+        if (this.numero != outra.numero)
+            return false;
+        return true;
+    }
+
 }

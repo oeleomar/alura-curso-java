@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import br.com.eleomardorneles.java.modelo.Conta;
 import br.com.eleomardorneles.java.modelo.ContaCorrente;
 
-public class Test {
+public class TestArrayList {
   public static void main(String[] args) {
     // Posso passar uma capacidade inicial
     ArrayList<String> nomes = new ArrayList<String>(10);
