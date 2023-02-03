@@ -1,17 +1,21 @@
 package br.com.eleomardorneles.java.test;
 
-import br.com.eleomardorneles.java.models.Conta;
+import br.com.eleomardorneles.java.modelo.ContaCorrente;
+import br.com.eleomardorneles.java.modelo.ContaPoupanca;
+import br.com.eleomardorneles.java.modelo.Conta;
 
 public class TesteArrayReferencias {
   public static void main(String[] args) {
-    // Array de referencias
-    Conta conta1 = new Conta();
-    Conta conta2 = new Conta();
+    ContaCorrente cc1 = new ContaCorrente(222, 222);
+    ContaPoupanca cb1 = new ContaPoupanca(111, 111);
 
-    Conta[] contas = new Conta[2];
-    for (int i = 0; i < contas.length; i++) {
-      contas[i] = conta1;
-      System.out.println(contas[i].getNome());
-    }
+    Conta[] arrayContas = new Conta[2];
+    arrayContas[0] = cc1;
+    arrayContas[1] = cb1;
+
+    // Estou forcando o compilador a aceitar um tipo mais específico que CONTA
+    ContaCorrente ref = (ContaCorrente) arrayContas[0];// Type cast
+    System.out.println(ref.toString());
+
   }
 }
