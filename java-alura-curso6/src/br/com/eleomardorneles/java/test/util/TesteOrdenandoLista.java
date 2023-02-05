@@ -28,8 +28,12 @@ public class TesteOrdenandoLista {
       System.out.println(conta);
     }
 
-    NumeroContaComparator comparator = new NumeroContaComparator();
-    lista.sort(comparator);
+    // Forma menos usada, pois vou usar a instancia apenas uma vez.
+    // NumeroContaComparator comparator = new NumeroContaComparator();
+    // lista.sort(comparator);
+
+    // Método bom
+    lista.sort(new NumeroContaComparator());
 
     for (Conta conta : lista) {
       System.out.println(conta);
@@ -38,16 +42,34 @@ public class TesteOrdenandoLista {
 }
 
 class NumeroContaComparator implements Comparator<Conta> {
-
+  // Melhor método
   @Override
   public int compare(Conta o1, Conta o2) {
-    if (o1.getNumero() < o2.getNumero()) {
-      return -1;
-    }
-    if (o1.getNumero() > o2.getNumero()) {
-      return 1;
-    }
-    return 0;
+    // Usando o wrapper Integer
+    return Integer.compare(o1.getNumero(), o2.getNumero());
   }
+
+  /*
+   * // Método mais simplificado
+   * 
+   * @Override
+   * public int compare(Conta o1, Conta o2) {
+   * return o1.getNumero() - o2.getNumero();
+   * }
+   */
+
+  // Modelo ruim
+  /*
+   * @Override
+   * public int compare(Conta o1, Conta o2) {
+   * if (o1.getNumero() < o2.getNumero()) {
+   * return -1;
+   * }
+   * if (o1.getNumero() > o2.getNumero()) {
+   * return 1;
+   * }
+   * return 0;
+   * }
+   */
 
 }
