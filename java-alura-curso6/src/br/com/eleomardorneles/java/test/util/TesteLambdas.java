@@ -1,8 +1,8 @@
 package br.com.eleomardorneles.java.test.util;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 import br.com.eleomardorneles.java.modelo.Cliente;
 import br.com.eleomardorneles.java.modelo.Conta;
@@ -52,6 +52,17 @@ public class TesteLambdas {
     // trabalhando com contas
     // Entao o (Conta o1, Conta o2) pode ser resumido em (o1, o2)
     lista.sort((o1, o2) -> Integer.compare(o1.getNumero(), o2.getNumero()));
+
+    // Lambada forEach
+    lista.forEach(conta -> System.out.println(conta));
+
+    // Método com classe anonima
+    lista.forEach(new Consumer<Conta>() {
+      @Override
+      public void accept(Conta t) {
+        System.out.println(t);
+      }
+    });
 
     for (Conta conta : lista) {
       System.out.println(conta);

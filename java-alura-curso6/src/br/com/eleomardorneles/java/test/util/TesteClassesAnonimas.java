@@ -55,6 +55,7 @@ public class TesteClassesAnonimas {
         return Integer.compare(o1.getNumero(), o2.getNumero());
       }
     });
+
     for (Conta conta : lista) {
       System.out.println(conta);
     }
