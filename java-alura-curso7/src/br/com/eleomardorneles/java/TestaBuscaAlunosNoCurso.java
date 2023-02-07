@@ -17,9 +17,13 @@ public class TestaBuscaAlunosNoCurso {
     javaCollections.matricular(a3);
 
     System.out.println("Quem é o aluno com matrícula 5617? ");
-    System.out.println(javaCollections.buscaPorMatricula(111));
+    // System.out.println(javaCollections.buscaPorMatricula(111));
 
     // Collection MAP
+    // Iterar sobre
+    javaCollections.getMatriculaParaAluno().keySet()
+        .forEach(chave -> System.out.println(javaCollections.getMatriculaParaAluno().get(chave)));
+
     // Funciona como uma tabela
     // NÃO É FILHA DE COLLETION
     // No nosso caso é um mapa que tem um número que guarda o aluno

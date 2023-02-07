@@ -33,6 +33,10 @@ public class Curso {
     return Collections.unmodifiableSet(this.alunos);
   }
 
+  public Map<Integer, Aluno> getMatriculaParaAluno() {
+    return Collections.unmodifiableMap(matriculaParaAluno);
+  }
+
   public String getNome() {
     return nome;
   }
