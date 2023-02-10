@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public class TestaRemocao {
   public static void main(String[] args) throws SQLException {
-    Integer index = 5;
+    Integer index = 9;
     Connection connection = ConnectionFactory.recoveryConnection();
 
-    PreparedStatement statement = connection.prepareStatement("DELETE FROM PRODUTO WHERE ID > ?");
+    PreparedStatement statement = connection.prepareStatement("DELETE FROM PRODUTO WHERE ID < ?");
 
     // Setando o atributo no ? no index 1 pois começa do 1
     statement.setInt(1, index);
