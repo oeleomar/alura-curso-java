@@ -1,24 +1,24 @@
 package br.com.eleomardorneles.java;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class TestaListagem {
   public static void main(String[] args) throws SQLException {
     Connection connection = ConnectionFactory.recoveryConnection();
 
     // Statements
-    Statement state = connection.createStatement();
+    PreparedStatement statement = connection.prepareStatement("SELECT * FROM PRODUTO");
 
     // Executo o statement
     // Retorna um boolean me informando se o resultado é uma lista ou não
     // true = lista, false = nada
-    state.execute("SELECT * FROM PRODUTO");
+    statement.execute();
 
     // Buscar conteudos vindos da tabela
-    ResultSet result = state.getResultSet();
+    ResultSet result = statement.getResultSet();
 
     // Buscar se existe próximo
     while (result.next()) {

@@ -1,16 +1,20 @@
 package br.com.eleomardorneles.java;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class TestaRemocao {
   public static void main(String[] args) throws SQLException {
+    Integer index = 5;
     Connection connection = ConnectionFactory.recoveryConnection();
 
-    Statement statement = connection.createStatement();
-    statement.execute("DELETE FROM PRODUTO WHERE ID > 5", Statement.RETURN_GENERATED_KEYS);
+    PreparedStatement statement = connection.prepareStatement("DELETE FROM PRODUTO WHERE ID > ?");
+
+    // Setando o atributo no ? no index 1 pois começa do 1
+    statement.setInt(1, index);
+
+    statement.execute();
 
     // Retorna um inteiro com quantas linhas foi modificado
     Integer result = statement.getUpdateCount();
