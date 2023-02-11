@@ -7,7 +7,8 @@ import java.sql.SQLException;
 public class TestaRemocao {
   public static void main(String[] args) throws SQLException {
     Integer index = 9;
-    Connection connection = ConnectionFactory.recoveryConnection();
+    ConnectionFactory connectionFactory = new ConnectionFactory();
+    Connection connection = connectionFactory.recoveryConnection();
 
     PreparedStatement statement = connection.prepareStatement("DELETE FROM PRODUTO WHERE ID < ?");
 

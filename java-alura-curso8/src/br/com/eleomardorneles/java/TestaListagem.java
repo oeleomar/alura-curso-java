@@ -7,7 +7,8 @@ import java.sql.SQLException;
 
 public class TestaListagem {
   public static void main(String[] args) throws SQLException {
-    Connection connection = ConnectionFactory.recoveryConnection();
+    ConnectionFactory connectionFactory = new ConnectionFactory();
+    Connection connection = connectionFactory.recoveryConnection();
 
     // Statements
     PreparedStatement statement = connection.prepareStatement("SELECT * FROM PRODUTO");

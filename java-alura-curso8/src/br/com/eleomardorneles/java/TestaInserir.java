@@ -7,7 +7,8 @@ import java.sql.Statement;
 
 public class TestaInserir {
   public static void main(String[] args) throws SQLException {
-    Connection connection = ConnectionFactory.recoveryConnection();
+    ConnectionFactory connectionFactory = new ConnectionFactory();
+    Connection connection = connectionFactory.recoveryConnection();
 
     Statement statement = connection.createStatement();
 
