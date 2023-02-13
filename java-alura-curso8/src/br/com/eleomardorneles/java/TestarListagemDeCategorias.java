@@ -14,17 +14,14 @@ public class TestarListagemDeCategorias {
   public static void main(String[] args) throws SQLException {
     try (Connection connection = new ConnectionFactory().recoveryConnection()) {
 
-      List<Categoria> listaDeCategorias = new CategoriaDAO(connection).listar();
+      List<Categoria> listaDeCategorias = new CategoriaDAO(connection).listarComProdutos();
 
       listaDeCategorias.stream().forEach(categoria -> {
-        System.out.println(categoria);
-        try {
-          for (Produto produto : new ProdutoDAO(connection).buscar(categoria)) {
-            System.out.println(categoria + " - " + produto.getNome());
-          }
-        } catch (SQLException e) {
-          e.printStackTrace();
+
+        for (Produto produto : categoria.getProdutos()) {
+          System.out.println(categoria + " - " + produto.getNome());
         }
+
       });
     }
   }
