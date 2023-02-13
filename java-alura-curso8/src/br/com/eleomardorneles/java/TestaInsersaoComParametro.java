@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import br.com.eleomardorneles.java.factory.ConnectionFactory;
+
 public class TestaInsersaoComParametro {
   public static void main(String[] args) throws SQLException {
     /*

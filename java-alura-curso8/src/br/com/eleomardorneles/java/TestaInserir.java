@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import br.com.eleomardorneles.java.factory.ConnectionFactory;
+
 public class TestaInserir {
   public static void main(String[] args) throws SQLException {
     ConnectionFactory connectionFactory = new ConnectionFactory();

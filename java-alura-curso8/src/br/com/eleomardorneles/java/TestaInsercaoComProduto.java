@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.eleomardorneles.java.dao.ProdutoDAO;
+import br.com.eleomardorneles.java.factory.ConnectionFactory;
 import br.com.eleomardorneles.java.modelo.Produto;
 
 public class TestaInsercaoComProduto {

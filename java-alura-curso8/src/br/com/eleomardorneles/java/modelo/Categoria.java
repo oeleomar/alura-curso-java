@@ -13,4 +13,8 @@ public class Categoria {
   public String toString() {
     return String.format("Categoria: %d %s", this.id, this.nome);
   }
+
+  public Integer getId() {
+    return id;
+  }
 }

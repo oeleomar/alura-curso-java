@@ -2,6 +2,8 @@ package br.com.eleomardorneles.java;
 
 import java.sql.SQLException;
 
+import br.com.eleomardorneles.java.factory.ConnectionFactory;
+
 public class TestaPoolDeConexoes {
   public static void main(String[] args) throws SQLException {
     ConnectionFactory connectionFactory = new ConnectionFactory();

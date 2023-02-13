@@ -1,4 +1,4 @@
-package br.com.eleomardorneles.java;
+package br.com.eleomardorneles.java.factory;
 
 import java.sql.Connection;
 import java.sql.SQLException;
